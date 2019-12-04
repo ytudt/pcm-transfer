@@ -1,0 +1,9 @@
+/build/
+/config/
+/dist/
+/*.js
+/test/unit/coverage/
+src/chat/mock
+src/chat/index.ts
+src/typings/*.ts
+src/entry/entry.d.ts

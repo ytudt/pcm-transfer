@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>测试</title>
+  <script src="../lib/pcm-transfer.js"></script>
+  <script src="./pcm.js"></script>
+</head>
+<body>
+
+  <audio src="" controls loop></audio>
+  <button id="btn">播放</button>
+  <script>
+    const audioEle = document.getElementsByTagName('audio')[0];
+    const data = pcmData.split(',');
+    const {blobUrl} = pcmTransfer(data, 16000, 16, 1);
+    document.getElementById('btn').addEventListener('click', () => {
+      audioEle.setAttribute('src', blobUrl);
+      audioEle.play();
+    })
+  </script>
+
+</body>
+</html>

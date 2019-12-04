@@ -1,0 +1,69 @@
+{
+  "name": "pcm-transfer",
+  "version": "1.0.2",
+  "description": "",
+  "main": "lib/pcm-transfer.js",
+  "files": [
+    "package.json",
+    "read.md",
+    "lib/"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --config ./webpack.config.js --mode production",
+    "prepublishOnly": "npm run build",
+    "lint": "eslint --fix --ext .ts src"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint"
+    }
+  },
+  "lint-staged": {
+    "*.{.ts,.tsx}": [
+      "eslint",
+      "git add"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ytudt/pcm-transfer.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ytudt/pcm-transfer/issues"
+  },
+  "homepage": "https://github.com/ytudt/pcm-transfer#readme",
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^2.10.0",
+    "@typescript-eslint/parser": "^2.10.0",
+    "babel-eslint": "^10.0.3",
+    "eslint-config-prettier": "^6.7.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "user": "0.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^6.7.2",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-friendly-formatter": "^3.0.0",
+    "eslint-loader": "^1.9.0",
+    "eslint-plugin-html": "^4.0.2",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-node": "^5.2.0",
+    "eslint-plugin-promise": "^3.4.0",
+    "eslint-plugin-react": "^7.17.0",
+    "eslint-plugin-typescript": "^0.14.0",
+    "husky": "^3.1.0",
+    "lint-staged": "^9.5.0",
+    "prettier": "^1.12.1",
+    "ts-loader": "^6.2.1",
+    "typescript": "^3.7.2",
+    "typescript-eslint-parser": "^22.0.0",
+    "uglifyjs-webpack-plugin": "^2.2.0",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10"
+  }
+}
